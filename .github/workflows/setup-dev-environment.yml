@@ -6,11 +6,11 @@ on:
         dev_branch:
          description: 'name of the developer branch'
          required: true
-         default: DEV-US_XXX_Z
+         default: DEV-US_Kudos
         work_account:
             description: 'work account of the developer'
             required: true
-            default: makerb@jovadkere5.onmicrosoft.com
+            default: godchosen@wbj4n.onmicrosoft.com
 
 jobs:
   setup-dev-environment:
@@ -54,7 +54,8 @@ jobs:
        shell: bash
        run: |
         set -e
-            
+        
+        az config set core.login_experience_v2=off
         az login --service-principal \
             -u ${{secrets.PPAPPID}} \
             -p ${{secrets.PPAPPSECRET}} \
